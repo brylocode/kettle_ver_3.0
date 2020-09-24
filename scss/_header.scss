@@ -1,0 +1,52 @@
+.header {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner640px {
+    display: none;
+}
+
+.scroll-reminder__icon {
+    font-size: 1.7rem;
+    color: $second-color;
+    transform: scale(.8);
+    animation: reminder 1s linear infinite;
+    cursor: pointer;
+}
+
+@keyframes reminder {
+    0% {
+        transform: scale(.8);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(.8);
+    }
+}
+
+@media(max-width:640px) {
+    .header {
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .slider {
+        display: none;
+    }
+
+    .banner640px {
+        display: block;
+        width: 100%;
+    }
+
+    .scroll-reminder__icon {
+        padding: 5px;
+    }
+}

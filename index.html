@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sprawności Czajnika Elektycznego</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/67713de186.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div class="nav-container">
+            <a class="logo" href="/">
+                <img src="img/teapot.png" alt="logo" class="logo__img">
+            </a>
+            <div class="menu">
+                <span class="menu__btn menu__btn-js">
+                    <img src="assets/menu-btn.svg" alt="menu-icon" class="menu-icon">
+                </span>
+                <ul class="menu__list menu__list-js ">
+                    <li class="menu__element">
+                        <a href="#" class="menu__link menu__link-js">Home</a>
+                    </li>
+                    <li class="menu__element">
+                        <a href="#measurements" class="menu__link menu__link-js">Kalkulator</a>
+                    </li>
+                    <li class="menu__element">
+                        <a href="#" class="menu__link menu__link-js">Twoje pomiary</a>
+                    </li>
+                    <li class="menu__element">
+                        <a href="#" class="menu__link menu__link-js">Wyniki</a>
+                    </li>
+                </ul>
+                <script src="js/menu.js"></script>
+            </div>
+        </div>
+    </nav>
+
+
+    <header class="header page__header">
+        <div class="slider">
+            <img src="slider/slide1.png" alt="animacja nalewania wody do czajnika">
+            <script src="js/slider.js"></script>
+        </div>
+        <img src="img/banner640px_test.png" alt="czajnik elekryczny na palniku" class="banner640px">
+
+
+        <div class="scroll-reminder">
+            <i class="fas fa-angle-double-down  scroll-reminder__icon"></i>
+        </div>
+    </header>
+    <main class="main  page__main">
+        <div class="main__wrapper">
+            <h2 class="main__title">Pomiary</h2>
+            <section class="instruction">
+                <h3 class=" instruction__title">Instrukcja pomiarów:</h3>
+                <ol class="instruction__steps">
+                    <li>Z tabliczki znamionowej odczytaj moc czajnika elektrycznego.</li>
+                    <li>Do dużego garnka wlej ok. 5 litrów wody. Wymieszaj w celu wyrównania temperatury
+                        w naczyniu.</li>
+                    <li>Wyznaczacz temperaturę wody w garnku.</li>
+                    <li>Wlej do czajnika odmierzoną masę mody, ok 200 ml.</li>
+                    <li>Zmierz czas potrzebny do zagotowania wody. Po dokonaniu pomiaru wylej wodę.
+                        Do czajnika wlej koleją porcję wody ok 400 ml i ponownie zmierz czas do zagotowania.
+                        Dane wpisz w wyznaczone miejsca.</li>
+                    <li><strong>Aby dodać pomiar kliknij w przycisk "DODAJ POMIAR"</strong></li>
+                    <!-- <li><strong>Aby usunąć wszystkie pomiary kliknij w przycisk "USUŃ WSZYSTKO"</strong></li>
+                            <li><strong>Aby zobaczyć wykresy kliknij w przucisk "OBLICZ I GENERUJ WYKRESY"</strong></li> -->
+                </ol>
+                <p class="instruction__footer"> Po kliknięciu przycisku "ZAPISZ" sprawność dla <strong>tego
+                        pomiaru</strong> zostanie automatycznie obliczona, napomiast po
+                    kliknięciu przycisku "PODSUMOWANIE" program podsumuje
+                    Twoje badania i wygeneruje wykres.
+                </p>
+            </section>
+            <section class="measurements">
+                <div class="add-new-measurement-modal">
+                    <h3 class="add-new-measurement-modal__title ">nowy pomiar</h3>
+
+                    <div class="timer">
+                        <p class="timer__stopwatch">0:00</p>
+                        <p class="timer__time"></p>
+
+                        <div class="timer__buttons">
+                            <button class="start"><i class="fas fa-play"></i>start</button>
+                            <button class="stop"><i class="fas fa-stop"></i>pomiar</button>
+                            <button class="reset"><i class="fas fa-times "></i>reset</button>
+                        </div>
+                    </div>
+                    <div class="data">
+                        <div class="data__time">
+                            <label for="time">Czas pomiaru:</label>
+                            <input type="number" id="time" class="data__time--input">
+                            <span>s</span>
+                        </div>
+                        <div class="data__mass">
+                            <label for="mass">Masa badanej wody:</label>
+                            <input type="number" id="mass" class="data__mass--input">
+                            <span>kg</span>
+                        </div>
+                        <div class="data__start-temperature">
+                            <label for="start-temperature">Temperatura początkowa:</label>
+                            <input type="number" id="start-temperature" class="data__start-temperature--input">
+                            <span>°C</span>
+                        </div>
+                        <div class="data__power">
+                            <label for="power">Moc czajnika:</label>
+                            <input type="number" id="power" class="data__power--input">
+                            <span>W</span>
+                        </div>
+                    </div>
+                    <div class="control-buttons">
+                        <button class="control-buttons__save-btn"><i class="fas fa-save"></i>Zapisz</button>
+                        <button class="control-buttons__cancel-btn"><i class="far fa-window-close"></i>Anuluj</button>
+                    </div>
+
+                </div>
+                <div class="measurements-title">
+                    <p class="measurements-title__number">Numer pomiaru:</p>
+                    <p class="measurements-title__mass">Masa wody [kg]:</p>
+                    <p class="measurements-title__time">Czas potrzebny do zagotowania wody[s]:</p>
+                    <p class="measurements-title__efficiency">Sprawność [%]:</p>
+                </div>
+                <div class="measurements-list">
+                </div>
+                <div class="measurements-buttons">
+                    <button type="button" class="measurements-buttons__add-measurement"><i class="fas fa-plus"></i>dodaj
+                        pomiar</button>
+                    <button type="button" class="measurements-buttons__delete-all"><i class="far fa-trash-alt"></i>Usuń
+                        wszystko</button>
+                    <button type="button" class="measurements-buttons__summary"><i
+                            class="far fa-chart-bar"></i>Posdumowanie</button>
+                </div>
+            </section>
+
+            <section class="summary">
+                <h2 class="summary__title">Podsumowanie</h2>
+                <div class="summary__info">
+                    <div class="summary__chart-container">
+                        <canvas id="efficiencyChart"></canvas>
+                    </div>
+                    <div class="summary__text"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer page__footer">
+        <div class="footer__wrapper">
+            <p class="footer__info-author">&copy; 2020
+                <a href="https://github.com/brylocode">brylocode</a></p>
+        </div>
+    </footer>
+
+
+    <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

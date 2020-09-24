@@ -1,0 +1,23 @@
+.footer {
+    width: 100%;
+    background-color: $second-color;
+    box-shadow: 0 0 10px 1px $second-color;
+    padding: 5px 0;
+
+
+    &__wrapper {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__info-author {
+        color: $first-color;
+
+        a {
+            color: $first-color;
+        }
+    }
+}
