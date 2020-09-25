@@ -125,6 +125,7 @@
     width: 100%;
     padding: 1rem;
     background-color: $second-color;
+    position: fixed;
 }
 
 .nav-container {
@@ -143,9 +144,13 @@
     }
 }
 
-
 .logo {
     display: block;
+    text-decoration: none;
+    font-size: 3rem;
+    color: $first-color;
+    font-weight: bold;
+    text-transform: uppercase;
 
     &__img {
         height: 4.8rem;
@@ -158,28 +163,54 @@
 }
 
 .menu__list {
-    position: absolute;
-    top: 60px;
-    right: 27px;
-    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    display: flex;
     flex-direction: column;
     text-align: center;
+    height: 100vh;
+    padding-top: 4rem;
     list-style: none;
     background-color: darken($color: $second-color, $amount: 2);
     box-shadow: 0 4px 8px 0 rgba(28, 39, 53, 0.24);
+    transition: right .3s;
+}
 
-    &--active {
-        display: flex;
-    }
+.menu__list--active {
+    right: 0;
+}
+
+.menu__close-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.menu__title {
+    position: absolute;
+    padding: 2rem 1.5rem;
+    font-size: 1.5rem;
+    color: $first-color;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    opacity: .3;
+    user-select: none;
 }
 
 .menu__link {
     display: block;
-    padding: 2rem 4rem;
-    font-size: 1.6rem;
+    padding: 2rem 6rem;
+    font-size: 1.7rem;
     color: $first-color;
     text-decoration: none;
-    transition: color .2s;
     font-weight: bold;
+    transition: color .2s;
 
+    &:active {
+        opacity: .8;
+    }
 }
