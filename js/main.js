@@ -5,7 +5,7 @@ window.addEventListener('scroll', () => {
     // console.log(window.innerWidth);
 
     if (window.scrollY === 0) {
-        nav.classList.remove('nav--is-sticky')
+        nav.classList.remove('nav--is-sticky');
 
     } else if (window.scrollY > 0 && window.scrollY <= 500) {
         nav.classList.remove('nav--is-sticky')
