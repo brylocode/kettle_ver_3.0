@@ -168,21 +168,22 @@
 .menu__list {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     z-index: 1000;
     display: flex;
     flex-direction: column;
     text-align: center;
     height: 100vh;
-    padding-top: 4rem;
+    padding-top: 5rem;
     list-style: none;
     background-color: darken($color: $second-color, $amount: 2);
     box-shadow: 0 4px 8px 0 rgba(28, 39, 53, 0.24);
-    transition: right .5s;
+    transition: transform .4s;
+    transform: translateX(100%);
 }
 
 .menu__list--active {
-    right: 0;
+    transform: translateX(0);
 }
 
 .menu__close-btn {
@@ -195,7 +196,7 @@
 
 .menu__title {
     position: absolute;
-    padding: 2rem 2.2rem;
+    padding: 2.6rem 2.2rem;
     font-size: 1.5rem;
     color: $first-color;
     text-transform: uppercase;
@@ -206,6 +207,7 @@
 }
 
 .menu__link {
+    position: relative;
     display: block;
     padding: 2rem 6rem;
     font-size: 2.2rem;
@@ -214,9 +216,24 @@
     font-weight: bold;
     transition: color .2s;
     text-transform: uppercase;
+    transition: opacity .2s;
+    text-align: left;
 
-    &:active {
-        opacity: .8;
+    &::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 2rem;
+        bottom: 1.5rem;
+        left: 6rem;
+        background-color: $first-color;
+        opacity: .3;
+        transform-origin: left;
+        transition: transform .4s;
+    }
+
+    &:hover::after {
+        transform: scaleX(2);
     }
 }
 
