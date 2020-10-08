@@ -75,13 +75,12 @@
 
     @media (min-width: $desktop) {
         position: static;
+        flex-direction: row;
         height: auto;
         padding-top: 0;
-        flex-direction: row;
-        transform: translateX(0);
         background-color: $second-color;
         box-shadow: none;
-
+        transform: translateX(0);
     }
 }
 
@@ -173,4 +172,9 @@
     z-index: 3;
     background-color: rgba(0, 0, 0, 0.6);
     transition: opacity .2s linear;
+
+    @media (min-width: $desktop) {
+        display: none;
+    }
+
 }

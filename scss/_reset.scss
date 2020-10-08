@@ -12,5 +12,13 @@ html {
 body {
     font-family: 'Open Sans Condensed',
         sans-serif;
+    padding-top: 7rem;
 
+    @media (min-width: $tablet) {
+        padding-top: 8rem;
+    }
+
+    @media (min-width: $desktop) {
+        padding-top: 9rem;
+    }
 }
