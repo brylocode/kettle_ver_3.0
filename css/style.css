@@ -42,8 +42,6 @@ body {
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-  -webkit-transition: .3s background-color;
-  transition: .3s background-color;
 }
 
 .nav {
@@ -310,7 +308,7 @@ body {
 .intro__title {
   margin-top: 3rem;
   margin-bottom: 3rem;
-  font-size: 6rem;
+  font-size: 5rem;
   line-height: 111%;
   font-weight: 900;
 }
@@ -321,7 +319,7 @@ body {
 
 .intro__description {
   margin-bottom: 5rem;
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 200;
   font-style: italic;
 }
