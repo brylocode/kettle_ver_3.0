@@ -10,9 +10,11 @@ html {
 }
 
 body {
-    font-family: 'Open Sans Condensed',
+    font-family: 'Nunito Sans',
         sans-serif;
     padding-top: 7rem;
+    background-color: $second-color;
+    color: $first-color;
 
     @media (min-width: $tablet) {
         padding-top: 8rem;

@@ -4,18 +4,41 @@
 }
 
 .intro {
+
     padding: 2rem;
     text-align: center;
 
     &__title {
-        margin-bottom: 2rem;
-        font-size: 3.1rem;
-        text-transform: uppercase;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        font-size: 6rem;
+        line-height: 111%;
+        font-weight: 900;
+
+        span {
+            display: block;
+        }
     }
 
     &__description {
-        margin-bottom: 1.5rem;
-        font-size: 1.5rem;
+        margin-bottom: 5rem;
+        font-size: 2rem;
+        font-weight: 200;
+        font-style: italic;
+    }
+
+    &__btn {
+        background-color: #49e4ff;
+        border-radius: 5rem;
+        color: $second-color;
+        font-weight: 900;
+        font-size: 2rem;
+        transition: background-color .3s;
+        border: 1px solid black;
+
+        &:hover {
+            background-color: darken($color: #49e4ff, $amount: 20%)
+        }
     }
 }
 
