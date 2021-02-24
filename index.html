@@ -19,8 +19,8 @@
 <body>
     <nav class="nav">
         <div class="nav-container">
-            <a class="logo" href="/">
-                <img src="assets/kettle-icon.svg" alt="logo" class="logo__img">
+            <a class="logo" href="#">
+                <img src="assets/kettle-icon-blue.svg" alt="logo" class="logo__img">
             </a>
             <div class="bluler"></div>
             <div class="menu">
@@ -33,17 +33,15 @@
                     </span>
                     <h4 class="menu__title">Kalkulator sprawności czajnika elektrycznego</h4>
                     <li class="menu__element">
-                        <a href="#" class="menu__link menu__link-js">Home</a>
+                        <a href="#" class="menu__link menu__link-js">Strona Główna</a>
                     </li>
                     <li class="menu__element">
                         <a href="#measurements" class="menu__link menu__link-js">Kalkulator</a>
                     </li>
                     <li class="menu__element">
-                        <a href="#" class="menu__link menu__link-js">Twoje pomiary</a>
+                        <a href="#" class="menu__link menu__link-js">Twój Czajnik</a>
                     </li>
-                    <li class="menu__element">
-                        <a href="#" class="menu__link menu__link-js">Wyniki</a>
-                    </li>
+
                     <li class="menu__element">
                         <a href="#" class="menu__link menu__link-js">Inne projekty</a>
                     </li>
@@ -70,34 +68,124 @@
             </div>
             <script src="js/slider.js"></script>
         </section>
-
-
     </header>
-    <main class="main  page__main">
-        <div class="main__wrapper">
-            <h2 class="main__title">Pomiary</h2>
-            <section class="instruction">
-                <h3 class=" instruction__title">Instrukcja pomiarów:</h3>
-                <ol class="instruction__steps">
-                    <li>Z tabliczki znamionowej odczytaj moc czajnika elektrycznego.</li>
-                    <li>Do dużego garnka wlej ok. 5 litrów wody. Wymieszaj w celu wyrównania temperatury
-                        w naczyniu.</li>
-                    <li>Wyznaczacz temperaturę wody w garnku.</li>
-                    <li>Wlej do czajnika odmierzoną masę mody, ok 200 ml.</li>
-                    <li>Zmierz czas potrzebny do zagotowania wody. Po dokonaniu pomiaru wylej wodę.
-                        Do czajnika wlej koleją porcję wody ok 400 ml i ponownie zmierz czas do zagotowania.
-                        Dane wpisz w wyznaczone miejsca.</li>
-                    <li><strong>Aby dodać pomiar kliknij w przycisk "DODAJ POMIAR"</strong></li>
-                    <!-- <li><strong>Aby usunąć wszystkie pomiary kliknij w przycisk "USUŃ WSZYSTKO"</strong></li>
-                            <li><strong>Aby zobaczyć wykresy kliknij w przucisk "OBLICZ I GENERUJ WYKRESY"</strong></li> -->
-                </ol>
-                <p class="instruction__footer"> Po kliknięciu przycisku "ZAPISZ" sprawność dla <strong>tego
-                        pomiaru</strong> zostanie automatycznie obliczona, napomiast po
-                    kliknięciu przycisku "PODSUMOWANIE" program podsumuje
-                    Twoje badania i wygeneruje wykres.
+
+
+
+
+    <main class="main">
+        <section class="calculator">
+            <div class="calculator__header">
+                <p class="calculator__title">
+                    <img class="instruction-icon" src="assets/info-square.svg" alt="ikona-instrukcji">
+                    Kalkulator.
                 </p>
+                <aside class="instruction">
+                    <h3 class="instruction__title">Instrukcja pomiarów:</h3>
+                    <ol class="instruction__steps">
+                        <li>Z tabliczki znamionowej odczytaj moc <span class="kettle">czajnika elektrycznego</span>.
+                        </li>
+                        <li>Do dużego garnka wlej ok. 5 litrów wody. Wymieszaj w celu wyrównania temperatury
+                            w naczyniu.</li>
+                        <li>Wyznaczacz temperaturę wody w garnku.</li>
+                        <li>Wlej do <span class="kettle">czajnika</span> odmierzoną masę wody, ok 200 ml.</li>
+                        <li>Zmierz czas potrzebny do zagotowania wody. Po dokonaniu pomiaru wylej wodę.
+                            Do <span class="kettle">czajnika</span> wlej koleją porcję wody ok 400 ml i ponownie
+                            zmierz
+                            czas do zagotowania.
+                            Dane wpisz w wyznaczone miejsca.</li>
+                        <li><strong>Aby dodać pomiar kliknij w przycisk "DODAJ POMIAR"</strong></li>
+                        <!-- <li><strong>Aby usunąć wszystkie pomiary kliknij w przycisk "USUŃ WSZYSTKO"</strong></li>
+                                    <li><strong>Aby zobaczyć wykresy kliknij w przucisk "OBLICZ I GENERUJ WYKRESY"</strong></li> -->
+                    </ol>
+                </aside>
+
+            </div>
+        </section>
+
+
+
+
+        <div class="new-measurement">
+            <h3>Dodaj nowy pomiar</h3>
+            <div class="timer">
+                <p class="timer__stopwatch">0:00</p>
+                <p class="timer__time"></p>
+
+                <div class="timer__buttons">
+                    <button class="start"><svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-player-play" width="24" height="24" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="#14161f" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M7 4v16l13 -8z" />
+                        </svg>start</button>
+                    <button class="stop"><svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-player-stop" width="24" height="24" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="#14161f" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <rect x="5" y="5" width="14" height="14" rx="2" />
+                        </svg>pomiar</button>
+                    <button class="reset"><svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-refresh" width="24" height="24" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="#14161f" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
+                            <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
+                        </svg>reset</button>
+                    <div class="data">
+                        <div class="data__time">
+                            <label for="time">Czas pomiaru:</label>
+                            <input type="number" id="time" class="data__time--input">
+                            <span>s</span>
+                        </div>
+                        <div class="data__mass">
+                            <label for="mass">Masa badanej wody:</label>
+                            <input type="number" id="mass" class="data__mass--input">
+                            <span>kg</span>
+                        </div>
+                        <div class="data__start-temperature">
+                            <label for="start-temperature">Temperatura początkowa:</label>
+                            <input type="number" id="start-temperature" class="data__start-temperature--input">
+                            <span>°C</span>
+                        </div>
+                        <div class="data__power">
+                            <label for="power">Moc czajnika:</label>
+                            <input type="number" id="power" class="data__power--input">
+                            <span>W</span>
+                        </div>
+                    </div>
+                    <div class="control-buttons">
+                        <button class="control-buttons__save-btn"><i class="fas fa-save"></i>Zapisz</button>
+                        <button class="control-buttons__cancel-btn"><i class="far fa-window-close"></i>Anuluj</button>
+                    </div>
+                </div>
+            </div>
+
+            <section class="measurments">
+                <div class="measurements-title">
+                    <p class="measurements-title__number">Numer pomiaru:</p>
+                    <p class="measurements-title__mass">Masa wody [kg]:</p>
+                    <p class="measurements-title__time">Czas potrzebny do zagotowania wody[s]:</p>
+                    <p class="measurements-title__efficiency">Sprawność [%]:</p>
+                </div>
+                <div class="measurements-list">
+                </div>
+                <div class="measurements-buttons">
+                    <button type="button" class="measurements-buttons__add-measurement"><i class="fas fa-plus"></i>dodaj
+                        pomiar</button>
+                    <button type="button" class="measurements-buttons__delete-all"><i class="far fa-trash-alt"></i>Usuń
+                        wszystko</button>
+                    <button type="button" class="measurements-buttons__summary"><i
+                            class="far fa-chart-bar"></i>Posdumowanie</button>
+                </div>
             </section>
-            <!-- <section class="measurements">
+            <section class="summary">
+            </section>
+    </main>
+    <!-- <section class="measurements">
                 <div class="add-new-measurement-modal">
                     <h3 class="add-new-measurement-modal__title ">nowy pomiar</h3>
 
@@ -157,17 +245,8 @@
                 </div>
             </section> -->
 
-            <section class="summary">
-                <h2 class="summary__title">Podsumowanie</h2>
-                <div class="summary__info">
-                    <div class="summary__chart-container">
-                        <canvas id="efficiencyChart"></canvas>
-                    </div>
-                    <div class="summary__text"></div>
-                </div>
-            </section>
-        </div>
-    </main>
+
+
 
     <footer class="footer page__footer">
         <div class="footer__wrapper">

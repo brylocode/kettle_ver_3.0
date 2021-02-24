@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    //menu
+
     const menuBtn = document.querySelector('.menu__btn-js');
     const menuCloseBtn = document.querySelector('.menu__close-btn-js');
     const menuList = document.querySelector('.menu__list-js');
@@ -26,5 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     menuBtn.addEventListener('click', handleOpenMenu);
     menuCloseBtn.addEventListener('click', handleCloseMenu);
+
+    //instruction
+
+
 
 });

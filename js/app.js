@@ -278,7 +278,7 @@ const handleReset = () => {
 
 
 
-addMeasurementBtn.addEventListener('click', showPanel);
+// addMeasurementBtn.addEventListener('click', showPanel);
 cancelBtn.addEventListener('click', closePanel);
 saveBtn.addEventListener('click', checkForm);
 deleteAllBtn.addEventListener('click', deleteAllMeasurements);

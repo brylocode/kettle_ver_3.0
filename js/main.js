@@ -15,3 +15,14 @@ window.addEventListener('scroll', () => {
         }
     }
 })
+
+
+const instruction = document.querySelector('.instruction');
+const instructionIcon = document.querySelector('.instruction-icon');
+
+
+const handleShowInstruction = () => {
+    instruction.classList.toggle('instruction--active')
+}
+
+instructionIcon.addEventListener('click', handleShowInstruction)
