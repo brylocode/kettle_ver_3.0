@@ -464,23 +464,38 @@ body {
 }
 
 .instruction {
-  font-size: 1.6rem;
-  opacity: 0;
-  height: 0;
-  -webkit-transition: opacity 0.3s, height 1s;
-  transition: opacity 0.3s, height 1s;
+  display: none;
+  z-index: 1000;
+  font-size: 1.8rem;
+  opacity: 1;
+  padding-top: 10rem;
   background-color: #161822;
 }
 
+.instruction__close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
 .instruction.instruction--active {
-  opacity: 1;
-  height: 1000px;
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .instruction__title {
   text-align: center;
-  font-size: 3rem;
+  font-size: 3.3rem;
   padding-top: 1rem;
+  font-weight: 700;
 }
 
 .instruction__steps {

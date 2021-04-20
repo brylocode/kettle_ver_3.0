@@ -49,23 +49,44 @@
 }
 
 .instruction {
-  font-size: 1.6rem;
-  opacity: 0;
-  height: 0;
-  transition: opacity 0.3s, height 1s;
+  
+ display: none;
+  z-index: 1000;
+  font-size: 1.8rem;
+  opacity: 1;
+  padding-top: 10rem;
+  // height: 0;
+  // transition: opacity 0.3s, height 1s;
   background-color: lighten($second-color, 1);
   // border-radius: 0.7rem;
   // box-shadow: rgba(35, 46, 60, 4%) 0 2px 4px 0;
 
+&__close-btn{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
   &.instruction--active {
-    opacity: 1;
-    height: 1000px;
+    position: fixed;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    display: block;
+    // opacity: 1;
+    // height: 1000px;
+     top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   }
 
   &__title {
     text-align: center;
-    font-size: 3rem;
+    font-size: 3.3rem;
     padding-top: 1rem;
+    font-weight: 700;
   }
 
   &__steps {
