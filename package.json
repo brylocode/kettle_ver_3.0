@@ -1,0 +1,25 @@
+{
+  "name": "kettle_ver_3.0",
+  "version": "1.0.0",
+  "description": "live=>  https://brylocode.github.io/kettle_ver_3.0/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "greeting": "echo \"\\033[32mHello World\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brylocode/kettle_ver_3.0.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brylocode/kettle_ver_3.0/issues"
+  },
+  "homepage": "https://github.com/brylocode/kettle_ver_3.0#readme",
+  "keywords": [],
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.26.0"
+  }
+}
